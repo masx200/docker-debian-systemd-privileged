@@ -1,1 +1,1 @@
-docker build -f dockerfile -t docker-debian-systemd-privileged .
+docker build -f dockerfile -t docker-debian-systemd-privileged:latest .

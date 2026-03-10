@@ -36,7 +36,7 @@ services:
 
     hostname: "37d7c2cd57f7"
 
-    image: "docker-debian-systemd-privileged"
+    image: "docker-debian-systemd-privileged:latest"
 
     ipc: "private"
 
