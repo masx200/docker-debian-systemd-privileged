@@ -13,6 +13,7 @@ networks:
 
 services:
   docker-debian-systemd-privileged:
+    domainname: "docker-debian-systemd-privileged"
     tmpfs:
       - /run
       - /run/lock
