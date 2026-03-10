@@ -1,6 +1,6 @@
 networks:
-  ipv6net:
-    name: ipv6net
+  ipv6-network:
+    name: ipv6-network
     external: false
     enable_ipv6: true
     driver: bridge
@@ -55,7 +55,7 @@ services:
       options: {}
 
     networks:
-      ipv6net:
+      ipv6-network:
         ipv4_address: 10.20.15.2
         ipv6_address: fd12:dead:beef::2
 
