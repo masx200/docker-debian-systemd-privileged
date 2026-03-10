@@ -6,8 +6,8 @@ networks:
     driver: bridge
     ipam:
       config:
-        - subnet: "172.20.15.0/24"
-          gateway: 172.20.15.1
+        - subnet: "10.20.15.0/24"
+          gateway: 10.20.15.1
         - subnet: "fd12:dead:beef::/64"
           gateway: "fd12:dead:beef::1"
 
@@ -56,7 +56,7 @@ services:
 
     networks:
       ipv6net:
-        ipv4_address: 172.20.15.2
+        ipv4_address: 10.20.15.2
         ipv6_address: fd12:dead:beef::2
 
     privileged: true
