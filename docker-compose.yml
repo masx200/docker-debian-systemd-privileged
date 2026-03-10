@@ -37,7 +37,7 @@ services:
 
     hostname: "37d7c2cd57f7"
 
-    image: "docker-debian-systemd-privileged:latest"
+    image: "docker.cnb.cool/masx200/docker_mirror/docker-debian-systemd-privileged:latest"
 
     ipc: "private"
 

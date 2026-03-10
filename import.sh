@@ -1,1 +1,1 @@
-docker import docker-debian-systemd-privileged.tgz docker-debian-systemd-privileged:latest
+docker import docker-debian-systemd-privileged.tgz docker.cnb.cool/masx200/docker_mirror/docker-debian-systemd-privileged:latest

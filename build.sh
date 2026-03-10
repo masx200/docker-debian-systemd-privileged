@@ -1,1 +1,1 @@
-docker build -f dockerfile -t docker-debian-systemd-privileged:latest .
+docker build -f dockerfile -t docker.cnb.cool/masx200/docker_mirror/docker-debian-systemd-privileged:latest .
