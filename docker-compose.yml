@@ -1,0 +1,78 @@
+networks:
+  ipv6net:
+    name: ipv6net
+    external: false
+    enable_ipv6: true
+    driver: bridge
+    ipam:
+      config:
+        - subnet: "172.20.15.0/24"
+          gateway: 172.20.15.1
+        - subnet: "fd12:dead:beef::/64"
+          gateway: "fd12:dead:beef::1"
+
+services:
+  docker-debian-systemd-privileged:
+    tmpfs:
+      - /run
+      - /run/lock
+      - /tmp
+    extra_hosts:
+      - "repo.protonvpn.com:104.26.4.35"
+      - "repo.protonvpn.com:[2606:4700:20::681a:423]"
+      - "deno-dns-over-https-server.g18uibxgnb.de5.net:172.67.157.182"
+      - "deno-dns-over-https-server.g18uibxgnb.de5.net:[2606:4700:3031::ac43:9db6]"
+    cgroup: "host"
+
+    command:
+      - "/sbin/init"
+
+    container_name: "docker-debian-systemd-privileged"
+
+    environment:
+      - "container=docker"
+      - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+      - "DEBIAN_FRONTEND=noninteractive"
+
+    hostname: "37d7c2cd57f7"
+
+    image: "docker-debian-systemd-privileged"
+
+    ipc: "private"
+
+    labels:
+      com.docker.compose.config-hash: "852283713fa27e9543dd00a9bdc673371c833152171d0ccc6b9a2122a8c66680"
+      com.docker.compose.container-number: "1"
+      com.docker.compose.depends_on: ""
+      com.docker.compose.image: "sha256:b3d68f5d7ce4ad5a7942c06bc8da06f6e901ebdea6bd1c42f6e79971fa828c84"
+      com.docker.compose.oneoff: "False"
+
+      com.docker.compose.version: "5.0.0"
+
+    logging:
+      driver: "json-file"
+      options: {}
+
+    networks:
+      ipv6net:
+        ipv4_address: 172.20.15.2
+        ipv6_address: fd12:dead:beef::2
+
+    privileged: true
+
+    restart: "always"
+
+    security_opt:
+      - "label=disable"
+
+    stdin_open: true
+
+    tty: true
+
+    volumes:
+      - "/sys/fs/cgroup:/sys/fs/cgroup"
+      - "/usr/lib/modules:/lib/modules"
+
+    working_dir: "/root"
+
+version: "3.6"
